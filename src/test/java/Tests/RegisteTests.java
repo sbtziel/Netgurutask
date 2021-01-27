@@ -4,11 +4,11 @@ import Config.DriverConfig;
 import Pages.HomePage;
 import org.junit.Test;
 
-public class RegisterUserWithoutEmail  extends DriverConfig {
+public class RegisteTests  extends DriverConfig {
 
     @Test
-    public void RegisterUserWithoutEmail(){
-
+    public void userShouldSuccessfullyRegister()
+    {
         new HomePage().
                  enterSignInPage()
                 .SubmitValidEmail()

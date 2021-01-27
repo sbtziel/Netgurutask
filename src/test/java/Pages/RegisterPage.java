@@ -6,15 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
 
 public class RegisterPage extends DriverConfig {
 
-    String pass = "sample123";
 
     RegisterPage(){
         PageFactory.initElements(driver, this);
-
     }
 
 
@@ -57,10 +54,6 @@ public class RegisterPage extends DriverConfig {
     @FindBy(id = "submitAccount")
     private WebElement submitFormBtn;
 
-    @FindBy(css = "#center_column > .alert li")
-    private List<WebElement> alertMessageContent;
-
-
 
     private void FillGender() { maleTitleRadioBtn.click(); }
 
@@ -79,6 +72,8 @@ public class RegisterPage extends DriverConfig {
         passwordInput.sendKeys("Samplepassword123");
     }
 
+    private void PressSubmitButton(){  submitFormBtn.click(); }
+
     private void SelectBirthFromDropdown()
     {
         new Select(birthdayDaySelect).selectByValue("4");
@@ -92,8 +87,6 @@ public class RegisterPage extends DriverConfig {
         customerLastnameInput.sendKeys("LastName");
     }
 
-
-
     public RegisterPage RegisterWithValidData(){
         fillUserName();
         FillGender();
@@ -104,7 +97,7 @@ public class RegisterPage extends DriverConfig {
         SelectStateFromDropdown();
         fillUserPassword();
         fillZipCode();
-        submitFormBtn.click();
+        PressSubmitButton();
         return this;
     }
 }

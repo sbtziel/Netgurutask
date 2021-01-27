@@ -24,28 +24,25 @@ public class LoginPage extends DriverConfig {
     private WebElement enterLoginEmail;
     @FindBy(id ="passwd")
     private static WebElement enterLoginPass;
-    @FindBy(css = "#center_column > .alert li")
-    private WebElement PasswordAlert;
+    @FindBy(xpath = "//div[@id='center_column']//div[@class='alert alert-danger']//ol//li")
+    private WebElement PasswordA1lert;
 
-    private void enterEmail(String emailAddress) {
-        enterEmail.sendKeys(emailAddress);
-    }
+
+    private void enterEmail(String emailAddress) { enterEmail.sendKeys(emailAddress); }
 
     private void FillPassword() {
         enterLoginPass.sendKeys("MissingEmail");
     }
 
-    private void AssertMissingemail() {
-        String EXPECTED_MESSAGE ="An email address required.";
-        Assert.assertEquals(EXPECTED_MESSAGE,PasswordAlert.getText());
-    }
+    private void Login() { LoginButton.click(); }
 
-    boolean isSignInLinkDisplayed(WebElement element) {
-        if(element.isDisplayed());
-           return true;
-    }
-    public void Login() {
-        LoginButton.click();
+    private void ClickRegister() { createAccountButton.click();}
+
+    private void AssertMissingemail()
+    {
+        String EXPECTED_MESSAGE ="An email address required.";
+        System.out.println(PasswordA1lert.getText());
+        Assert.assertEquals(EXPECTED_MESSAGE,PasswordA1lert.getText());
     }
 
 
@@ -59,7 +56,7 @@ public class LoginPage extends DriverConfig {
 
     public RegisterPage SubmitValidEmail() {
         enterEmail(getSaltString()+"@gmail.com");
-        createAccountButton.click();
+        ClickRegister();
         return new RegisterPage();
     }
 
@@ -68,14 +65,6 @@ public class LoginPage extends DriverConfig {
         return this;
     }
 
-    public LoginPage Enteremail(){
-        FillPassword();
-        return this;
-    }
-    public LoginPage AssertValidisVisible(){
-        isSignInLinkDisplayed(LoginButton);
-        return this;
-    }
     public LoginPage PressLoginButton(){
         Login();
         return this;

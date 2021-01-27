@@ -4,16 +4,15 @@ import Config.DriverConfig;
 import Pages.HomePage;
 import org.junit.Test;
 
-public class LoginUserPositive extends DriverConfig {
+public class LoginTests extends DriverConfig {
 
     @Test
-    public void userShouldSuccessfullyRegister() {
+    public void LoginWithoutMailValidation()
+    {
         new HomePage()
                 .enterSignInPage()
-                .Enteremail()
+                .EnterPassword()
                 .PressLoginButton()
                 .MissingPassword();
-
     }
-
 }

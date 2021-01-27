@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
+
 
 
 
@@ -14,8 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverConfig {
 
-    public static WebDriver driver;
-
+    public WebDriver driver;
 
     @Before
     public void startTest() {
@@ -29,10 +28,8 @@ public class DriverConfig {
 
     @After
     public void QuitTest(){
-
         if (driver != null)
             driver.quit();
-
     }
 
 }

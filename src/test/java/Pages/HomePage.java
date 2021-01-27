@@ -14,15 +14,13 @@ public class HomePage extends DriverConfig {
     @FindBy(partialLinkText = "Sign in")
     private WebElement signInButton;
 
-    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/a")
-    private WebElement Dresses;
+    private void ClickSignInButton() { signInButton.click(); }
 
-    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/ul/li[2]/a")
-    private WebElement EveningDresses;
 
-    public LoginPage enterSignInPage() {
-        signInButton.click();
-
+    public LoginPage enterSignInPage()
+    {
+        ClickSignInButton();
         return new LoginPage();
     }
+
 }
