@@ -1,7 +1,7 @@
 
 test automation project using <br> 
 <b>Java <br> 
-Selenium <br> 
+Selenium (Chrome driver)<br> 
 Junit <br> 
 Maven<br>
 Page Object Pattern<br><br></b>
