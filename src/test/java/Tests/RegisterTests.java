@@ -4,7 +4,7 @@ import Config.DriverConfig;
 import Pages.HomePage;
 import org.junit.Test;
 
-public class RegisteTests  extends DriverConfig {
+public class RegisterTests  extends DriverConfig {
 
     @Test
     public void userShouldSuccessfullyRegister()

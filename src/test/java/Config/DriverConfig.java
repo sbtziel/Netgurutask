@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverConfig {
 
-    public WebDriver driver;
+    public static WebDriver driver;
 
     @Before
     public void startTest() {
@@ -33,5 +33,8 @@ public class DriverConfig {
     }
 
 }
+
+
+
 
 
