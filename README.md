@@ -1,6 +1,6 @@
 
 test automation project using <br> 
-<b>Java <br> 
+<b>Java 11 <br> 
 Selenium (Chrome driver)<br> 
 Junit <br> 
 Maven<br>
