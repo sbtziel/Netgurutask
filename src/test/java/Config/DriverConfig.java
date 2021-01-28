@@ -8,8 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-
-
 import java.util.concurrent.TimeUnit;
 
 public class DriverConfig {
@@ -27,7 +25,7 @@ public class DriverConfig {
     }
 
     @After
-    public void QuitTest(){
+    public void QuitTest() {
         if (driver != null)
             driver.quit();
     }

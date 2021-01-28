@@ -11,14 +11,16 @@ public class HomePage extends DriverConfig {
         PageFactory.initElements(driver, this);
     }
 
+
     @FindBy(partialLinkText = "Sign in")
     private WebElement signInButton;
 
-    private void ClickSignInButton() { signInButton.click(); }
+    private void ClickSignInButton() {
+        signInButton.click();
+    }
 
 
-    public LoginPage enterSignInPage()
-    {
+    public LoginPage enterSignInPage() {
         ClickSignInButton();
         return new LoginPage();
     }

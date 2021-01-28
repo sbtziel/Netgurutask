@@ -7,8 +7,7 @@ import org.junit.Test;
 public class LoginTests extends DriverConfig {
 
     @Test
-    public void LoginWithoutMailValidation()
-    {
+    public void LoginWithoutMailValidation() {
         new HomePage()
                 .enterSignInPage()
                 .EnterPassword()

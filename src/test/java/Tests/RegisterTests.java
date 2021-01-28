@@ -4,13 +4,12 @@ import Config.DriverConfig;
 import Pages.HomePage;
 import org.junit.Test;
 
-public class RegisterTests  extends DriverConfig {
+public class RegisterTests extends DriverConfig {
 
     @Test
-    public void userShouldSuccessfullyRegister()
-    {
+    public void userShouldSuccessfullyRegister() {
         new HomePage().
-                 enterSignInPage()
+                enterSignInPage()
                 .SubmitValidEmail()
                 .RegisterWithValidData();
     }

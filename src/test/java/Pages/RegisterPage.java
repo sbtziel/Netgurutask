@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 public class RegisterPage extends DriverConfig {
 
 
-    RegisterPage(){
+    RegisterPage() {
         PageFactory.initElements(driver, this);
     }
 
@@ -55,39 +55,50 @@ public class RegisterPage extends DriverConfig {
     private WebElement submitFormBtn;
 
 
-    private void FillGender() { maleTitleRadioBtn.click(); }
+    private void FillGender() {
+        maleTitleRadioBtn.click();
+    }
 
-    private void FillPhoneNumber(){ phoneNumberInput.sendKeys("123123123123123"); }
+    private void FillPhoneNumber() {
+        phoneNumberInput.sendKeys("123123123123123");
+    }
 
-    private  void fillZipCode(){ zipCodeInput.sendKeys("11234"); }
+    private void fillZipCode() {
+        zipCodeInput.sendKeys("11234");
+    }
 
-    private void fillCity(){ cityInput.sendKeys("City"); }
+    private void fillCity() {
+        cityInput.sendKeys("City");
+    }
 
-    private  void FillAdress(){ addressLineInput.sendKeys("RandomAdress"); }
+    private void FillAdress() {
+        addressLineInput.sendKeys("RandomAdress");
+    }
 
-    private void SelectStateFromDropdown(){ new Select(stateSelect).selectByValue("4"); }
+    private void SelectStateFromDropdown() {
+        new Select(stateSelect).selectByValue("4");
+    }
 
-    private void fillUserPassword()
-    {
+    private void fillUserPassword() {
         passwordInput.sendKeys("Samplepassword123");
     }
 
-    private void PressSubmitButton(){  submitFormBtn.click(); }
+    private void PressSubmitButton() {
+        submitFormBtn.click();
+    }
 
-    private void SelectBirthFromDropdown()
-    {
+    private void SelectBirthFromDropdown() {
         new Select(birthdayDaySelect).selectByValue("4");
         new Select(birthdatMonthSelect).selectByValue("10");
         new Select(birthdayYearSelect).selectByValue("1990");
     }
 
-    private void fillUserName ()
-    {
+    private void fillUserName() {
         customerFirstnameInput.sendKeys("Name");
         customerLastnameInput.sendKeys("LastName");
     }
 
-    public RegisterPage RegisterWithValidData(){
+    public RegisterPage RegisterWithValidData() {
         fillUserName();
         FillGender();
         fillCity();
