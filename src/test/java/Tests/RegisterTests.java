@@ -11,6 +11,8 @@ public class RegisterTests extends DriverConfig {
         new HomePage().
                 enterSignInPage()
                 .SubmitValidEmail()
-                .RegisterWithValidData();
+                .RegisterWithValidData()
+                .PressSubmitButton()
+                .AssertNameLastname();
     }
 }

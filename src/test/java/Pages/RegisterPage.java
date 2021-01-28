@@ -1,6 +1,7 @@
 package Pages;
 
 import Config.DriverConfig;
+import Utility.User;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,6 +14,9 @@ public class RegisterPage extends DriverConfig {
     RegisterPage() {
         PageFactory.initElements(driver, this);
     }
+
+
+    User randomUser = new User("SeleniumMamimie", "NazwiskoTez");
 
 
     @FindBy(id = "id_gender1")
@@ -93,13 +97,13 @@ public class RegisterPage extends DriverConfig {
         new Select(birthdayYearSelect).selectByValue("1990");
     }
 
-    private void fillUserName() {
-        customerFirstnameInput.sendKeys("Name");
-        customerLastnameInput.sendKeys("LastName");
+    private void fillUserName(String name, String lastname) {
+        customerFirstnameInput.sendKeys(name);
+        customerLastnameInput.sendKeys(lastname);
     }
 
-    public RegisterPage RegisterWithValidData() {
-        fillUserName();
+    public MyAccountPage RegisterWithValidData() {
+        fillUserName(randomUser.getName(),randomUser.getLastname());
         FillGender();
         fillCity();
         FillAdress();
@@ -109,6 +113,6 @@ public class RegisterPage extends DriverConfig {
         fillUserPassword();
         fillZipCode();
         PressSubmitButton();
-        return this;
+        return new MyAccountPage(randomUser);
     }
 }
