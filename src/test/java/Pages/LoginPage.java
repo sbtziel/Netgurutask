@@ -52,7 +52,7 @@ public class LoginPage extends DriverConfig {
     }
 
 
-    public LoginPage MissingPassword() {
+    public LoginPage MissingMail() {
         AssertMissingemail();
         return this;
     }

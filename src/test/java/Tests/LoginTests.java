@@ -12,6 +12,6 @@ public class LoginTests extends DriverConfig {
                 .enterSignInPage()
                 .EnterPassword()
                 .PressLoginButton()
-                .MissingPassword();
+                .MissingMail();
     }
 }
